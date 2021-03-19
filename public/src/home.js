@@ -28,6 +28,10 @@ function getMostCommonGenres(books) {
   }).sort((a, b)=> b.count - a.count).slice(0, 5)
 }
 
+function sortTitle() {
+  return result.sort((titleA, titleB) => titleB.count - titleA.count).slice(0, 5)
+}
+
 function getMostPopularBooks(books) {
   const result = books.map((book) => { 
     const popularity = { 
@@ -49,7 +53,8 @@ function getMostPopularAuthors(books, authors) {
       count: borrowsForAuthor   
   }
    })
-  return result.sort((titleA, titleB) => titleB.count - titleA.count).slice(0, 5) 
+   sortTitle()
+  //return result.sort((titleA, titleB) => titleB.count - titleA.count).slice(0, 5) 
 }
 
 module.exports = {
