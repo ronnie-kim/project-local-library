@@ -28,7 +28,7 @@ function getMostCommonGenres(books) {
   }).sort((a, b)=> b.count - a.count).slice(0, 5)
 }
 
-function sortTitle() {
+function sortTitle(result) {
   return result.sort((titleA, titleB) => titleB.count - titleA.count).slice(0, 5)
 }
 
@@ -39,7 +39,7 @@ function getMostPopularBooks(books) {
     }; 
     return popularity; 
   }); 
-  return result.sort((titleA, titleB) => titleB.count - titleA.count).slice(0, 5) 
+  sortTitle(result)
 }
 
 function getMostPopularAuthors(books, authors) {
@@ -53,8 +53,7 @@ function getMostPopularAuthors(books, authors) {
       count: borrowsForAuthor   
   }
    })
-   sortTitle()
-  //return result.sort((titleA, titleB) => titleB.count - titleA.count).slice(0, 5) 
+   sortTitle(result)
 }
 
 module.exports = {
